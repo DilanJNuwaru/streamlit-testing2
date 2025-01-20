@@ -186,8 +186,8 @@ class StreamlitRAGSystem:
             # Model configuration
             colored_header(label="Model Configuration", description="Select models", color_name="blue-70")
             self.embedding_model = st.selectbox("Embedding Model", ["text-embedding-3-large"])
-            self.filter_model = st.selectbox("Filter Model", ["gpt-4", "gpt-3.5-turbo"])
-            self.response_model = st.selectbox("Response Model", ["gpt-4", "gpt-3.5-turbo"])
+            self.filter_model = st.selectbox("Filter Model", ["gpt-4o-mini", "gpt-3.5-turbo"])
+            self.response_model = st.selectbox("Response Model", ["gpt-4o-mini", "gpt-3.5-turbo"])
             
             add_vertical_space(2)
             
