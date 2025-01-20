@@ -18,6 +18,14 @@ from streamlit_lottie import st_lottie
 import requests
 from pathlib import Path
 
+# Must be the first Streamlit command
+st.set_page_config(
+    page_title="WTS Tax Advisory",
+    page_icon="🏢",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # Load environment variables
 load_dotenv()
 
@@ -65,22 +73,14 @@ class StreamlitRAGSystem:
         # Initialize tokenizer
         self.tokenizer = tiktoken.get_encoding("cl100k_base")
         
-        # Set Streamlit theme
-        self._set_streamlit_theme()
+        # Set custom styles
+        self._set_custom_styles()
         
         # Load animations
         self.loading_animation = load_lottie_url("https://assets6.lottiefiles.com/packages/lf20_kxq5bhml.json")
 
-    def _set_streamlit_theme(self):
-        """Configure Streamlit theme and styling."""
-        st.set_page_config(
-            page_title="WTS Tax Advisory",
-            page_icon="🏢",
-            layout="wide",
-            initial_sidebar_state="expanded"
-        )
-
-        # Custom CSS
+    def _set_custom_styles(self):
+        """Set custom CSS styles."""
         st.markdown("""
         <style>
         .stApp {
@@ -655,13 +655,6 @@ class StreamlitRAGSystem:
 
 def main():
     """Main entry point for the Streamlit application."""
-    st.set_page_config(
-        page_title="WTS Tax Advisory",
-        page_icon="🏢",
-        layout="wide",
-        initial_sidebar_state="expanded"
-    )
-    
     # Create logs directory
     Path("logs").mkdir(exist_ok=True)
     
