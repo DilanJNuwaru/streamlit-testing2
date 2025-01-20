@@ -59,6 +59,24 @@ def load_lottie_url(url: str) -> Dict:
 class StreamlitRAGSystem:
     def __init__(self):
         """Initialize the RAG system with Streamlit configuration."""
+        # Initialize default parameters
+        self.initial_chunks = 15
+        self.refined_chunks = 10
+        self.min_chunks = 3
+        self.max_chunks = 10
+        self.relevance_threshold = 0.61
+        self.temperature = 0
+        self.max_history_tokens = 10000
+        self.query_refinement_temp = 0.2
+        self.rate_limit_delay = 0.1
+        self.max_retries = 3
+        self.retry_delay = 1
+        
+        # Model configuration
+        self.embedding_model = "text-embedding-3-large"
+        self.filter_model = "gpt-4"
+        self.response_model = "gpt-4"
+        
         # Initialize session state
         if 'chat_history' not in st.session_state:
             st.session_state.chat_history = []
