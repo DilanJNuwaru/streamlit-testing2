@@ -197,7 +197,7 @@ class StreamlitRAGSystem:
             self.refined_chunks = st.slider("Refined Search Chunks", 5, 20, 10)
             self.relevance_threshold = st.slider("Relevance Threshold", 0.0, 1.0, 0.61)
             self.temperature = st.slider("Temperature", 0.0, 1.0, 0.0)
-            self.max_history_tokens = st.number_input("Max History Tokens", 1000, 100000, 10000)
+            self.max_history_tokens = st.number_input("Max History Tokens", 1000, 1000000, 10000)
             
             add_vertical_space(2)
             
