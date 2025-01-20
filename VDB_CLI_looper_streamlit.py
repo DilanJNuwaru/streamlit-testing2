@@ -66,7 +66,7 @@ class StreamlitRAGSystem:
         self.max_chunks = 10
         self.relevance_threshold = 0.61
         self.temperature = 0
-        self.max_history_tokens = 10000
+        self.max_history_tokens = 100000
         self.query_refinement_temp = 0.2
         self.rate_limit_delay = 0.1
         self.max_retries = 3
